@@ -18,7 +18,7 @@ func main() {
 	color.Set(color.FgHiWhite)
 	fmt.Printf("%s\r\n", GetHostname())
 	color.Unset()
-	resp, err := http.Get("http://www.svt1.se")
+	resp, err := http.Get("http://www.svt.se")
 
 	if err != nil {
 		fmt.Printf("Error: %s\r\n", err.Error())
