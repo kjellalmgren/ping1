@@ -1,6 +1,9 @@
 /*
-
- */
+	ping1 test program
+	Author: Kjell Almgren, Tetracon
+	Date: 2017-07-29
+	Version: 0.1
+*/
 package main
 
 import (
