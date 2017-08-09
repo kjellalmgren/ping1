@@ -11,12 +11,19 @@ Container is bild from resin/rpi-raspbian.
 
 ##build container
 
+    $ GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-w -s' -a -installsuffix cgo -o ping1
     # build with tag ping1, -t equals tag
-    $ docker build --file Dockerfile.builder -t ping1 .
+    $ docker build --file Dockerfile.builder -t tetracon/ping1:0.1 .
+    # build from scratch, -t equals tag
+    $ docker build --file Dockerfile.scratch -t tetracon/ping1:0.2 .
     # push to hub.docker.com, assumes docker login
     $ push <respository>/<container>:<tag>
-    # run container
-    $ docker run --name ping1 -t ping1 .
+    # run container version 1
+    $ docker run --name ping1 -t tetracon/ping1:0.1
+    # run container version 2
+    $ docker run --name ping1 -t tetracon/ping1:0.2
+    # run shell to look into cantainer
+    $ docker run -it -t tetracon/ping1:0.2 sh
 
 ##Dockerfile.builder used
     # -------------------------------------------------

@@ -7,12 +7,30 @@
 package main
 
 import (
+	"crypto/tls"
+	"crypto/x509"
 	"fmt"
 	"net/http"
 	"os"
 
 	"github.com/fatih/color"
 )
+
+var (
+	client *http.Client
+	pool   *x509.CertPool
+)
+
+//
+func init() {
+	pool = x509.NewCertPool()
+	pool.AppendCertsFromPEM(pemCerts)
+	client = &http.Client{
+		Transport: &http.Transport{
+			TLSClientConfig: &tls.Config{RootCAs: pool},
+		},
+	}
+}
 
 func main() {
 

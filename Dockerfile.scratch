@@ -1,0 +1,15 @@
+# ----------------------------------------------------------------
+# CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' .
+# ----------------------------------------------------------------
+FROM        resin/rpi-raspbian
+ MAINTAINER kjell.almgren@tetracon.se
+ #
+ #RUN mkdir -p /ping1
+ #WORKDIR /ping1
+ ADD        ping1 ping1
+ ENV        PORT 80
+ EXPOSE     80
+ 
+ ENTRYPOINT ["./ping1"] 
+#
+# ----------------------------------------------------------------

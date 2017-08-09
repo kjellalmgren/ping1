@@ -1,2 +1,4 @@
 # exclude from git repository
 ping1
+tetracon-server.crt
+tetracon-server.key
