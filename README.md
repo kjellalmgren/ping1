@@ -1,7 +1,7 @@
-#Build a container for Raspberry 3B+
+# Try to minimize each container
 
 Check external availability from within a linux container to the outside world. Sone dms problem in docker 17.05ce has been reported.
-Container is bild from resin/rpi-raspbian.
+Container is bild from scratch.
 
 ##Build with go (1.8.3) 
 

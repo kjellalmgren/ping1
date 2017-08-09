@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------
 # CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' .
 # ----------------------------------------------------------------
-FROM        resin/rpi-raspbian
+FROM        golang:rc-alpine
  MAINTAINER kjell.almgren@tetracon.se
  #
  #RUN mkdir -p /ping1
